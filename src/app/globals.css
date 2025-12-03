@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* =====================================
+   Global theme variables
+===================================== */
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -12,6 +15,7 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Dark mode support */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -19,8 +23,73 @@
   }
 }
 
+/* Global body styling */
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* =====================================
+   Night Sky Clouds Animation
+===================================== */
+
+/* Cloud container */
+.clouds {
+  overflow: hidden;
+  position: absolute;
+  inset: 0;
+  pointer-events: none; /* clouds won't block clicks */
+}
+
+/* Base cloud style */
+.cloud {
+  position: absolute;
+  left: -40%;
+  width: 120%;
+  height: 260px;
+  opacity: 0.22;
+  background: radial-gradient(
+    circle at 40% 40%,
+    rgba(255, 255, 255, 0.25),
+    rgba(180, 200, 255, 0.07),
+    transparent
+  );
+  filter: blur(35px);
+  border-radius: 999px;
+  animation: cloudMove 65s linear infinite;
+}
+
+/* Cloud layers and different speeds */
+.cloud-1 {
+  top: 12%;
+  animation-duration: 75s;
+  opacity: 0.28;
+}
+
+.cloud-2 {
+  top: 38%;
+  animation-duration: 95s;
+  opacity: 0.18;
+}
+
+.cloud-3 {
+  top: 62%;
+  animation-duration: 85s;
+  opacity: 0.2;
+}
+
+/* Cloud animation */
+@keyframes cloudMove {
+  0% {
+    transform: translateX(-30%) scale(1);
+  }
+  50% {
+    transform: translateX(50%) scale(1.05);
+  }
+  100% {
+    transform: translateX(130%) scale(1);
+  }
 }
