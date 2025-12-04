@@ -260,7 +260,7 @@ export default function NightSkyPage() {
         <main className="relative z-10 flex flex-col items-center justify-center w-full min-h-screen px-4 sm:px-6 py-12">
           <div className="p-8 rounded-3xl bg-[#0c0c1a] border border-white/10 shadow-xl text-center max-w-md">
             <h2 className="text-2xl sm:text-3xl text-yellow-100 mb-4">
-              Do you want to see something special?
+              Will you be my GrilFriend?
             </h2>
             <div className="flex justify-center gap-6 mt-6">
               <button
@@ -271,7 +271,7 @@ export default function NightSkyPage() {
               </button>
               <button
                 className="rounded-full bg-yellow-300/10 px-6 py-3 text-yellow-200 hover:bg-yellow-300/20"
-                onClick={() => alert("Maybe next time 💛")}
+                onClick={() => alert("wow oya na 💛")}
               >
                 No
               </button>
@@ -297,7 +297,7 @@ export default function NightSkyPage() {
               With you, my love, is where I belong.
             </p>
             <a
-              href="https://open.spotify.com/playlist/YOUR_PLAYLIST_LINK"
+              href="https://open.spotify.com/playlist/5Mga87ypeHjRv4hbAokbnz?si=x5JCFMIZSLeB9U0ukNnHeQ&pt=8bfa9ea4752be4ea7dddaac060ab0dc7&pi=rM9pkocYT2ON8"
               target="_blank"
               className="inline-block mt-4 px-6 py-3 bg-yellow-300/10 text-yellow-200 rounded-full hover:bg-yellow-300/20 transition"
             >
