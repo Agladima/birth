@@ -137,7 +137,8 @@ export default function NightSkyPage() {
               </h1>
               <p className="mt-3 text-sm sm:text-lg text-white/80">
                 Under the quiet night sky, our paths first crossed. Stars above
-                twinkled like our hearts...
+                twinkled like our hearts, setting the stage for a story that
+                would last a lifetime.
               </p>
               <svg
                 className="w-full h-6 mt-4"
