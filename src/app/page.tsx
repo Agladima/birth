@@ -8,6 +8,8 @@ export default function NightSkyPage() {
     "intro"
   );
 
+  const musicRef = useRef<HTMLAudioElement | null>(null);
+
   const ourPictures = [
     {
       src: "/images/maj (2).jpg",
@@ -103,6 +105,10 @@ export default function NightSkyPage() {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-[#03041a] font-sans text-zinc-50">
+      <audio ref={musicRef} loop>
+        <source src="/music/imaji.mp3" type="audio/mpeg" />
+      </audio>
+
       {/* STARS (z-0) */}
       <div className="pointer-events-none absolute inset-0 z-0">
         {Array.from({ length: 70 }).map((_, i) => (
@@ -195,17 +201,14 @@ export default function NightSkyPage() {
                 <button
                   onClick={() => {
                     const input =
-                      (
-                        document.getElementById(
-                          "nameInput"
-                        ) as HTMLInputElement | null
-                      )?.value || "";
-                    if (input.trim().toLowerCase() === "maji") {
-                      setStep("gallery");
+                      (document.getElementById("nameInput") as HTMLInputElement)
+                        ?.value || "";
+
+                    if (input.toLowerCase() === "maji") {
+                      musicRef.current?.play();
                       setShowModal(false);
-                    } else {
-                      alert("This story is only for Maji 💛");
-                    }
+                      setStep("gallery");
+                    } else alert("Only for Maji 💛");
                   }}
                   className="px-4 py-2 rounded-full bg-yellow-300/10 text-yellow-200"
                 >
