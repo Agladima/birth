@@ -331,7 +331,7 @@ export default function NightSkyPage() {
 
                 <button
                   onClick={() => {
-                    alert("It's okay — maybe later 💛");
+                    alert("Ouch, sad.");
                   }}
                   className="px-6 py-3 rounded-full bg-red-400/12 text-red-200"
                 >
