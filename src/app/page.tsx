@@ -321,20 +321,43 @@ export default function NightSkyPage() {
               </h2>
               <div className="flex gap-4 justify-center mt-4">
                 <button
-                  onClick={() => {
-                    // you can add a celebration or redirection here
-                    alert("She said YES! 💛");
+                  className="rounded-full bg-yellow-300/10 px-6 py-3 text-yellow-200 hover:bg-yellow-300/20"
+                  onClick={async () => {
+                    try {
+                      // Send Telegram notification
+                      await fetch("/api/sendTelegramMessage", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                          message: "Hello Ashi, Maji said YES💛",
+                        }),
+                      });
+
+                      // Move to poem step
+                      setStep("poem");
+                    } catch (err) {
+                      console.error("Telegram notification failed:", err);
+                      setStep("poem"); // still proceed
+                    }
                   }}
-                  className="px-6 py-3 rounded-full bg-green-400/20 text-green-200"
                 >
                   Yes
                 </button>
 
                 <button
-                  onClick={() => {
-                    alert("Ouch, sad.");
+                  onMouseEnter={(e) => {
+                    const btn = e.currentTarget;
+                    const x = Math.random() * 200 - 100;
+                    const y = Math.random() * 100 - 50;
+                    btn.style.transform = `translate(${x}px, ${y}px)`;
                   }}
-                  className="px-6 py-3 rounded-full bg-red-400/12 text-red-200"
+                  onTouchStart={(e) => {
+                    const btn = e.currentTarget;
+                    const x = Math.random() * 200 - 100;
+                    const y = Math.random() * 100 - 50;
+                    btn.style.transform = `translate(${x}px, ${y}px)`;
+                  }}
+                  className="px-6 py-3 rounded-full bg-red-400/12 text-red-200 transition-transform duration-300"
                 >
                   No
                 </button>
