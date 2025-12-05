@@ -283,17 +283,15 @@ export default function NightSkyPage() {
         {step === "poem" && (
           <main className="w-full max-w-lg flex flex-col items-center gap-6">
             <div className="w-full bg-[#0c0c1a]/90 rounded-3xl p-6 sm:p-8 border border-white/8 shadow-xl text-center">
-              <h2 className="text-3xl text-yellow-100 mb-4">
-                A Poem for Maji 💛
-              </h2>
+              <h2 className="text-3xl text-yellow-100 mb-4">For Imaji 💛</h2>
               <p className="text-yellow-200 italic mb-6">
-                Under the silent night, our hearts beat in rhyme,
+                I’m thankful for all the right choices that led me to meet you.
+                You bring so much light to my life. I cannot put into words how
+                much joy your mere presence gives me. I love you so much and it
+                sucks that I cannot get you anything. I hope this can stand in
+                the gap until I can get you a gift.😭
                 <br />
-                Stars whisper secrets, suspended in time.
-                <br />
-                Each glance, a melody, each touch, a song,
-                <br />
-                With you, my love, is where I belong.
+                Happy Birthday my Love.🎉💕
               </p>
 
               <a
